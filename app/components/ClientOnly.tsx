@@ -1,6 +1,6 @@
 "use client"
 
-import { Chicle } from "next/font/google";
+
 import React, { FC, useEffect, useState } from "react";
 
 interface ClientOnlyProps {
@@ -12,7 +12,7 @@ const ClientOnly: FC<ClientOnlyProps> = ({children}) => {
 
     useEffect(() => {
         setHasMounted(true);
-    }, [])
+    }, []);
     
     if (!hasMounted) {
         return null;

@@ -8,7 +8,7 @@ import {
     useState,
 } from "react";
 
-import {IoMdClose} from 'react-icons/io'
+import { IoMdClose } from 'react-icons/io'
 import Button from "../Button";
 
 interface ModalProps {
@@ -46,10 +46,9 @@ const Modal: FC<ModalProps> = ({
         if (disabled) {
             return;
         }
+        setShowModal(false);
 
-            setShowModal(false);
-
-            setTimeout(() => {
+        setTimeout(() => {
             onClose();
         }, 300);
     }, [disabled, onClose]);
@@ -63,7 +62,7 @@ const Modal: FC<ModalProps> = ({
 
     const handleSecondaryAction = useCallback(() => {
         if (disabled || !secondaryAction) {
-        return;
+            return;
         }
         secondaryAction();
     }, [disabled, secondaryAction]);
@@ -94,8 +93,8 @@ const Modal: FC<ModalProps> = ({
                     
                     ">
                         {/* Content */}
-                        <div className={
-                            `translate duration-300 h-full 
+                        <div className={`
+                            translate duration-300 h-full 
                             ${showModal ? "translate-y-0" : "translate-y-full"}
                             ${showModal ? "opacity-100" : "opacity-0"}
                         `}>
@@ -107,7 +106,7 @@ const Modal: FC<ModalProps> = ({
                                 {/* Header */}
                                 {/* Remove border */}
                                 <div className="
-                                    flex items-center justify-center p-6 rounded-
+                                    flex items-center justify-center p-6 rounded
                                     relative border-b-[1px]
                                 ">
                                     <button
@@ -125,9 +124,7 @@ const Modal: FC<ModalProps> = ({
                                     </div>
                                 </div>
                                 {/* Body */}
-                                <div className="
-                                    relative p-6 flex-auto
-                                ">
+                                <div className="relative p-6 flex-auto">
                                     {body}
                                 </div>
                                 {/* Footer */}
@@ -147,7 +144,6 @@ const Modal: FC<ModalProps> = ({
                                             disabled={disabled}
                                             label={actionLabel}
                                             onClick={handleSubmit} 
-
                                         />
                                     </div>
                                     {footer}

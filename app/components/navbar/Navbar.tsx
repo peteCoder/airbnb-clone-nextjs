@@ -8,6 +8,7 @@ import Search from './Search'
 
 import { SafeUser } from '@/app/types'
 import { User } from '@prisma/client'
+import Categories from './Categories'
 
 
 interface  NavbarProps {
@@ -39,9 +40,12 @@ const Navbar: React.FC<NavbarProps> = ({currentUser}) => {
                         <UserMenu currentUser={currentUser} />
                     </div>
                 </Container>
+                <Categories />
             </div>
         </div>
     )
 }
 
-export default Navbar
+export default Navbar;
+
+

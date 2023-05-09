@@ -61,7 +61,6 @@ const RegisterModal = () => {
             } 
             if (callback?.error) {
                 toast.error(callback.error);
-
             }
         })
     }
@@ -78,7 +77,7 @@ const RegisterModal = () => {
                 errors={errors}
                 required
             />
-            
+
             <Input 
                 id="password" 
                 label="Password"
@@ -90,7 +89,6 @@ const RegisterModal = () => {
             />
         </div>
     )
-
 
     const footerContent = (
         <div className='flex flex-col gap-4 mt-3'>
